@@ -1,7 +1,7 @@
 name: Continuous Integration
 on: [push]
 jobs:
-  format_lint_and_test:
+  lint_and_test:
     runs-on: ubuntu-latest
     steps:
 
@@ -28,9 +28,6 @@ jobs:
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction
-
-      - name: Format
-        run: poetry run make format
 
       - name: Lint
         run: poetry run make lint

@@ -4,10 +4,10 @@ install:
 	@poetry install
 
 format:
+	@ruff check --fix .
 	@blue .
 
 lint:
-	@ruff check --fix .
 	@ruff check .
 
 test:
