@@ -1,17 +1,17 @@
 .PHONY: install format lint test sec
 
 install:
-    @poetry install
+	@poetry install
 
 format:
-    @blue .
+	@blue .
 
 lint:
-    @ruff check --fix .
-    @ruff check .
+	@ruff check --fix .
+	@ruff check .
 
 test:
-    @pytest -v
+	@pytest -v
 
 sec:
-    @pip-audit
+	@pip-audit
